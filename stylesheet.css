@@ -1,0 +1,63 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#title {
+    margin-top: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    height:80vh;
+    width: 90vw;
+    overflow-x: scroll;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    margin: 3rem;
+}
+
+#listContainer {
+    display: flex;
+}
+
+.listItem, .addList {
+    display: inline;
+    min-width: 15rem;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+
+    background-color: lightgray;
+}
+
+.listItemContainer > p {
+    background-color: white;
+
+    padding: 0.5rem;
+    margin-top: 1rem;
+    min-height: 4rem;
+    width: 14rem;
+
+    border-radius: 5px;
+    overflow-wrap: break-word;
+}
+
+.addList {
+    height: 6rem;
+
+    background-color: rgb(73, 160, 73);
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bolder;
+
+    cursor: pointer;
+}
