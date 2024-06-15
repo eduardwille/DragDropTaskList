@@ -17,6 +17,7 @@
     height:80vh;
     width: 90vw;
     overflow-x: scroll;
+    overflow-y: clip;
     border: 1px solid black;
     border-radius: 5px;
 
@@ -25,17 +26,25 @@
 
 #listContainer {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .listItem, .addList {
     display: inline;
     min-width: 15rem;
+    height: 95%;
     border: 1px solid black;
     margin: 1rem;
     padding: 10px;
     border-radius: 5px;
 
     background-color: lightgray;
+}
+
+.listItemContainer {
+    overflow-y: scroll;
+    height: 88%;
 }
 
 .listItemContainer > p {
@@ -48,6 +57,10 @@
 
     border-radius: 5px;
     overflow-wrap: break-word;
+}
+
+.addItem {
+    margin-top: 1rem;
 }
 
 .addList {
