@@ -1,63 +1,200 @@
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: black;
+    user-select: none;
+    text-decoration: none;
 }
-
 body {
-    margin: 0;
-}
-
-#title {
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-
-    height: 15%;
-    margin: 0;
-}
-
-#container {
-    margin: 0;
-    height: 95vh;
-    font-size: larger;
-}
-
-#listContainer {
-    overflow-x: auto;
-    width: 100%;
-    height: 100%;    
-    white-space: nowrap; /** without no wrap the lists just overflow on the y axis */
-}
-
-#listContainer > .list {
-    display: inline-block;
-    width: 20rem;
-    height: 85%;    
-    margin: 1rem;
-
-    background-color: lightgray;
-    /*-webkit-text-stroke: 1px black;*/
+    background: url(img/background.jpg);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
     
-    border: 1px solid black;    
-    border-radius: 5px;
 }
 
-.listHeader, .listContent {
-    margin: 0;
-    padding: 1rem;
-    min-height: 1rem;
+#navBarHitbox {
+    width: 1vw;
+    height: 40px;
+    opacity: 0;
 }
-
-.listHeader {
-    text-align: center;
+#navBar {
+    background: #171c24;
+    width: 100vw;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    padding: 0px 40px;
+    overflow: hidden;
 }
-
+    #navBar > div {
+        font-size: 30px;
+        display: inline-block;
+        color: white;
+        margin: 0px 0px 15px 0px;
+    }
+    #navBar > a {
+        font-size: 25px;
+        margin-left: 40px;
+        text-align: center;
+    }
+    #navBar > a >div {
+        display: inline-block;
+    }
+    #navBar > a, #navBar > a > i {
+        font-size: 20px;
+        display: inline-block;
+        color: white;
+    }
+    
+#gridContainer {
+    display: grid;
+    /* 6x320px because there fit a total of 6 lists on the base page before it needs to extend, 
+    * before reaching 5/6 it will spread out the lists with equal margins over the page.
+    * I want the distance to always be the same, not when there are less lists larger space in between.
+    */
+    grid-template-columns: 320px 320px 320px 320px 320px 320px;
+    cursor: default !important;
+    margin: 15px;
+    height: 85%;
+}
+.list_wrapper {
+    grid-row: 2;
+    top: 0;
+    height: 92vh;
+    width: 300px;
+    display: inline-block;
+    float: left;
+}
+.list {
+    background-color: #ebecf0;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: black 0px 0px 4px;
+}
+.task_list {
+    overflow: auto;
+    max-height: 81vh;
+}
 .task {
-    width: 90%;
-    padding: 5% 5%;
-    min-height: 4rem;
-
-    background-color: white;
-    border-radius: 5px;
-
-    text-wrap: wrap;
+    background: white;
+    border-radius: 3px;
+    margin: 2px 0px 15px 2px;
+    padding: 5px;
+    box-shadow: black 0px 0px 4px;
+    width: 93%;
 }
+.add_task {
+    cursor: pointer;
+}
+.last_list {
+    opacity: 0.6;
+}
+.add_list {
+    cursor: pointer;
+}
+.delete_list, .update_list {
+    float: right;
+    color: red!important;
+    cursor: pointer;
+    padding: 0px 5px;
+}
+
+.title {
+    color: black!important;
+    text-shadow: none!important;
+}
+.description {
+    margin: 10px 0 10px 5px;
+}
+.time {
+    color: white;
+    background: #D3D3D3;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-shadow: 0px 0px 3px black
+}
+.status {
+    color: white;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-shadow: 0px 0px 3px black;
+}
+    .NotStarted {
+        width: 95px;
+        background: red;
+    }
+    .Working {
+        width: 65px;
+        background: orange;
+    }
+    .Finished {
+        width: 70px;
+        background: green;
+    }
+
+h4 {
+    margin: 0;
+    padding: 0px 0px 10px 0px;
+}
+select {
+    border: none;
+    background: #0095FF;
+}
+input, textarea {
+    color: white;
+    text-shadow: none!important;
+    background: #ECECEC;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-shadow: 0px 0px 3px black;
+    margin-left: 0 !important;
+    border: none;
+    resize: none;
+}
+textarea {
+    height: 70px;
+}
+.black {
+    color: black!important;
+}
+.red {
+    color: red;
+}
+.bg_green {
+    background: green!important;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.submit, .delete {
+    margin: 10px 0px 0px 0px;
+    text-shadow: 0px 0px 3px black!important;
+    background: #D3D3D3;
+}
+    .delete {
+        background: red;
+    }
+    .update {
+        background: #0095FF;
+    }
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: #888;
+}
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
